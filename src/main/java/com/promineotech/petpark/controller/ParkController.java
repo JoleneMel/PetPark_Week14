@@ -47,8 +47,11 @@ public class ParkController {
         //calling the parkService
         return parkService.retrieveAllContributors();
     }
-
+    
+    //Gets a contributor using the id 
+    //{} - resource id
     @GetMapping("/contributor/{contributorId}")
+    //this @pathvariable allows it to take the id from the http pathway 
     public ContributorData retrieveContributorById(@PathVariable Long contributorId){
         log.info("Retrieving contributor with ID={}",contributorId);
         return parkService.retrieveContributorById(contributorId);

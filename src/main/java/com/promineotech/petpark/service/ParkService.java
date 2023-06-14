@@ -67,6 +67,7 @@ public class ParkService {
 
     @Transactional
     public List<ContributorData> retrieveAllContributors() {
+    	//One way 
 //        List <Contributor> contributors = contributorDao.findAll();
 //        List<ContributorData> response = new LinkedList<>();
 //
@@ -75,12 +76,16 @@ public class ParkService {
 //        }
 //
 //        return response;
+    	
+    	//Another way 
         return contributorDao.findAll()
                 .stream()
+                //calling constructor
                 .map(ContributorData::new)
                 .toList();
     }
-
+    
+    //Finding a contributor by its id 
     @Transactional(readOnly = false)
     public ContributorData retrieveContributorById(Long contributorId) {
         Contributor contributor = findContributorById(contributorId);
