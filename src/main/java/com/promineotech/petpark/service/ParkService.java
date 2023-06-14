@@ -47,7 +47,7 @@ public class ParkService {
         if(Objects.isNull(contributorId)) {
             Optional <Contributor> opContrib = contributorDao.findByContributorEmail(contributorEmail);
             contributor = new Contributor();
-
+            //if email is present since it is a unique key it will throw a duplicate exception 
             if(opContrib.isPresent()) {
                 throw new DuplicateKeyException("Contributor with email " + contributorEmail + " already exists.");
             }

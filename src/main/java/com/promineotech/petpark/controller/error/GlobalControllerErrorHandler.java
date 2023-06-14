@@ -55,6 +55,7 @@ public class GlobalControllerErrorHandler {
                 LogStatus.STACK_TRACE);
     }
 
+    //WebRequest will inject the uri into it :), this returns a 404 or not found 
     @ExceptionHandler(NoSuchElementException.class)
     @ResponseStatus(code = HttpStatus.NOT_FOUND)
     public ExceptionMessage handleNoSuchElementException(
@@ -82,7 +83,7 @@ public class GlobalControllerErrorHandler {
         if (webRequest instanceof ServletWebRequest swr) {
             uri = swr.getRequest().getRequestURI();
         }
-
+        //can use a == on a enum type
         if(logStatus == LogStatus.MESSAGE_ONLY) {
             log.error("Exception: {}", ex.toString());
         } else {

@@ -15,7 +15,7 @@ public class Contributor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long contributorId;
     private String contributorName;
-
+    //unique key so everyone has to have a different email or will throw a duplicate error
     @Column(unique = true)
     private String contributorEmail;
 
