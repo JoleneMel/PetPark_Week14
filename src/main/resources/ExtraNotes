@@ -1,0 +1,33 @@
+	Recap of Week 13 
+		-The anatomy of a Spring Boot application 
+		-How to use JPA to create tables 
+		-Worrked with HTTP POST and JSON payload (POST = CREATE)
+		-Implemented the "Create Contributor" operation and verified the results 
+		-Learned about the 201 (Created) status code 
+		
+	Week 14 tasks :)  
+		-Retrieve contributors using HTTP GET (READ) 
+		-Implement a global error handler 
+		-Update contributor using HTTP PUT (UPDATE) 
+		-Delete contributor using HTTP DELETE(DELETE)
+		
+		(and also)
+		-How to customize the Spring Boot DAO interface 
+		-Write create and modify operations for pet park locations
+		-Write "Retrieve" operation for pet park locations 
+		
+	Retrieve Contributor 
+		-A look at the HTTP GET method 
+		-Write the "Retrieve All Contributors" operation(no parameters needed)
+		-Write the "Retrieve contributor by Id" operation (Id needed for the parameter) 
+		-Explain HTTP status 200(AKA SUCCUESS) 
+		
+	HTTP GET method(verb) 
+		-Used to retriebe information
+		-Does not change the state of the data 
+		-Does not contain a JSON body 
+		-Send GET to: 
+			/pet_park/contributor at http://localhost:8080
+			
+		(/pet_park - request mapping) 
+		(/contributor - Get mapping) 
