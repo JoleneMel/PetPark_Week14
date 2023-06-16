@@ -33,3 +33,17 @@
 		(/contributor - Get mapping) 
 		
 		-409 = conflict code 
+		
+	Update Contibutor 
+		- Add a method to modify an existing contributor 
+		- This is basically the same as the "Create Contributor" operation  but PUT is used instead of POST 
+		- We only need to modify the controller because the service and DAO methods are already written :) saves time woo!  
+		
+	The rest way 
+		-We have to tell spring which contributor we want to modify 
+		-This is done using the annotations @PutMapping and @PathVariable 
+		
+		@PutMapping("/contributor/{id}") 
+		ContributorData updateContributor(@PathVariable Long id) {
+		...
+		}

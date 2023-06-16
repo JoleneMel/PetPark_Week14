@@ -65,7 +65,7 @@ public class GlobalControllerErrorHandler {
     }
 
     @ExceptionHandler(DuplicateKeyException.class)
-    @ResponseStatus(code = HttpStatus.CONFLICT)
+    //@ResponseStatus(code = HttpStatus.CONFLICT)
     public ExceptionMessage handleDuplicateKeyException(
             DuplicateKeyException ex, WebRequest webRequest) {
         return buildExceptionMessage(ex, HttpStatus.CONFLICT, webRequest,
