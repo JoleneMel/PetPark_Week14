@@ -33,6 +33,8 @@ public class ParkController {
     @PutMapping("/contributor/{contributorId}")
     public ContributorData insertContributor( @PathVariable Long contributorId,
             @RequestBody ContributorData contributorData) {
+    	//VERY IMPORTANT WITHOUT THE SETTER IT WILL JUST CREATE!!!
+    	//Without the id it is just a the create  
         contributorData.setContributorId(contributorId);
         log.info("Updating contributor {}", contributorData);
 
@@ -51,7 +53,7 @@ public class ParkController {
     //Gets a contributor using the id 
     //{} - resource id
     @GetMapping("/contributor/{contributorId}")
-    //this @pathvariable allows it to take the id from the http pathway 
+    //this @pathvariable allows it to take the id from the http pathway
     public ContributorData retrieveContributorById(@PathVariable Long contributorId){
         log.info("Retrieving contributor with ID={}",contributorId);
         return parkService.retrieveContributorById(contributorId);
